@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:14.1-alpine
+    container_name: offersDB
+    restart: always
+    # env_file:
+    #   - ./server/.env
+    environment:
+      - POSTGRES_USER=exampleUserName
+      - POSTGRES_PASSWORD=examplePassword
+      - POSTGRES_DB=offers
+    ports:
+      - '5432:5432'
+    volumes:
+      - db:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    container_name: offersdbGUI
+    restart: always
+    ports:
+      - 8080:8080
+volumes:
+  db:
+    driver: local
