@@ -1,0 +1,32 @@
+{
+  "name": "offered",
+  "version": "1.0.0",
+  "description": "> ### A Job Offers Management Tool",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build -w client && npm run start -w server",
+    "dev": "concurrently \"npm run dev -w server\" \"npm run start -w client\"",
+    "test": "concurrently \"npm test -w server\" \"npm test -w client\"",
+    "lint": "eslint src/**/*.js src/**/*.jsx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kabandr/offered.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kabandr/offered/issues"
+  },
+  "homepage": "https://github.com/kabandr/offered#readme",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "devDependencies": {
+    "concurrently": "^7.3.0",
+    "eslint": "^8.21.0",
+    "eslint-plugin-react": "^7.30.1"
+  }
+}
