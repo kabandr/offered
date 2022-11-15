@@ -1,0 +1,123 @@
+body {
+  background: #E2DCC8;
+}
+
+.app-name {
+  font-size: 30px;
+  color: #E2DCC8;
+}
+
+a {
+  color: darkseagreen;
+}
+
+a:focus, a:hover {
+  color: #E2DCC8;
+  text-decoration: none;
+}
+
+.nav-pills.outline-active, .nav-link.active {
+  border: none;
+}
+
+.navbar {
+  background: #0F3D3E;
+  color: white;
+}
+
+.footer {
+  text-align: center;
+  background: #0F3D3E;
+  color: white;
+  width:100%;
+  height:100px;
+  position:absolute;
+  bottom:0;
+  left:0;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.logo-font {
+  color: #E2DCC8;
+}
+
+.home-page .banner {
+  background: #1B2430
+}
+
+.banner {
+  background: #1B2430
+}
+
+.search {
+  height: 40px;
+  width: 300px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  float: right;
+}
+
+.mr, .offerSub {
+  margin-right: 20px;
+  background: #0F3D3E;
+  color: white;
+}
+
+.profile-page .user-info {
+  background: #1B2430;
+  color: white;
+}
+
+button:focus {
+  outline: 0 !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+  user-select: none;
+}
+
+.not-found {
+  display: flex;
+  height: 85vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.page-item.active .page-link, .page-item.active .page-link:focus, .page-item.active .page-link:hover {
+  z-index: 2;
+  color: #fff;
+  cursor: default;
+  background-color: #1B2430;
+  border-color: #1B2430;
+}
+
+.btn-outline-primary {
+  width: 40px;
+  color: #1B2430;
+  background-image: none;
+  background-color: transparent;
+  border-color: #1B2430;
+}
+
+.btn-outline-primary.active {
+  background-color: #1B2430;
+    border-color: #1B2430;
+}
+
+.offer-status {
+  background: #0F3D3E;
+  color: white;
+  font-size: large;
+  height: 40px;
+  padding: 0.3em;
+  width: 100px;
+  text-align: center;
+  float: right;
+}

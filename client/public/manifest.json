@@ -1,0 +1,8 @@
+{
+  "short_name": "Offer",
+  "name": "Offered - A Job Offer Management Tool",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
