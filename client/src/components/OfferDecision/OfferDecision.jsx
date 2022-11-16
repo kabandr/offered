@@ -1,47 +1,45 @@
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-import rejectOffer from "../../services/deleteOffer"
-import acceptOffer from "../../services/acceptOffer"
+import declineOffer from "../../services/declineOffer";
+import acceptOffer from "../../services/acceptOffer";
 
 // Snackbar imports
-import * as React from 'react';
-import Stack from '@mui/material/Stack';
-import Snackbar from '@mui/material/Snackbar';
-import MuiAlert from '@mui/material/Alert';
+import * as React from "react";
+import Stack from "@mui/material/Stack";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-function OfferDecision({
-  slug,
-}) {
+function OfferDecision({ slug }) {
   const { headers } = useAuth();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const [reject, setReject] = React.useState(false);
+  const [decline, setDecline] = React.useState(false);
   const [accept, setAccept] = React.useState(false);
 
-  const handleReject = () => {
-    setReject(true);
-    rejectOffer({ headers, slug })
-  .then(() => navigate("/"))
-  .catch(console.error);
+  const handleDecline = () => {
+    setDecline(true);
+    declineOffer({ headers, slug })
+      .then((slug) => alert(slug))
+      .catch(console.error);
   };
 
   const handleAccept = () => {
-        setAccept(true);
-        acceptOffer({ headers, slug })
-      .then(() => navigate("/"))
+    setAccept(true);
+    acceptOffer({ headers, slug })
+      .then((slug) => alert(slug))
       .catch(console.error);
   };
 
   const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
+    if (reason === "clickaway") {
       return;
     }
-    setReject(false);
-    setAccept(false)
+    setDecline(false);
+    setAccept(false);
   };
 
   return (
@@ -49,31 +47,34 @@ function OfferDecision({
       <button
         className="btn btn-sm"
         style={{ color: "#d00" }}
-        onClick={handleReject}
+        onClick={handleDecline}
       >
-        <i className="ion-trash-a"></i> Reject Offer
+        <i className="ion-trash-a"></i> Decline
       </button>{" "}
       <button
         className="btn btn-sm"
         style={{ color: "#777" }}
         onClick={handleAccept}
       >
-          <i className="ion-edit"></i> Accept Offer
+        <i className="ion-edit"></i> Accept
       </button>{" "}
+      <Stack spacing={2} sx={{ width: "100%" }}>
+        <Snackbar open={accept} autoHideDuration={2000} onClose={handleClose}>
+          <Alert
+            onClose={handleClose}
+            severity="success"
+            sx={{ width: "100%" }}
+          >
+            Offer accepted! Congratulations!
+          </Alert>
+        </Snackbar>
 
-      <Stack spacing={2} sx={{ width: '100%' }}>
-      <Snackbar open={accept} autoHideDuration={2000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-          Offer accepted! Congratulations!
-        </Alert>
-      </Snackbar>
-
-      <Snackbar open={reject} autoHideDuration={2000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="info" sx={{ width: '100%' }}>
-          Offer rejected. Sorry to see you go.
-        </Alert>
-      </Snackbar>
-    </Stack>
+        <Snackbar open={decline} autoHideDuration={2000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="info" sx={{ width: "100%" }}>
+            Offer declined. Sorry to see you go.
+          </Alert>
+        </Snackbar>
+      </Stack>
     </>
   );
 }

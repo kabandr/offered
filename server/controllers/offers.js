@@ -249,8 +249,8 @@ const acceptOffer = async (req, res, next) => {
   }
 };
 
-// Reject Offer
-const rejectOffer = async (req, res, next) => {
+// Decline Offer
+const declineOffer = async (req, res, next) => {
   try {
     const { loggedUser } = req;
     if (!loggedUser) throw new UnauthorizedError();
@@ -308,7 +308,7 @@ module.exports = {
   singleOffer,
   updateOffer,
   acceptOffer,
-  rejectOffer,
+  declineOffer,
   deleteOffer,
   offersFeed,
 };

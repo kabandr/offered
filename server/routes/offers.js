@@ -7,12 +7,12 @@ const {
   singleOffer,
   updateOffer,
   acceptOffer,
-  rejectOffer,
+  declineOffer,
   deleteOffer,
   offersFeed,
 } = require("../controllers/offers");
 
-// All Offers - by Author/by Tag/Favorited by user
+// All Offers - by Recruiter/by Tag/Favorited by user
 router.get("/", verifyToken, allOffers);
 
 // Create Offer
@@ -30,8 +30,8 @@ router.put("/:slug", verifyToken, updateOffer);
 // Accept Offer 
 router.put("/:slug/accept", verifyToken, acceptOffer);
 
-// Reject Offer 
-router.put("/:slug/reject", verifyToken, rejectOffer);
+// Decline Offer 
+router.put("/:slug/decline", verifyToken, declineOffer);
 
 // Delete Offer
 router.delete("/:slug", verifyToken, deleteOffer);

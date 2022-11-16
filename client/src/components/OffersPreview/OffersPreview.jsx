@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import OfferTags from "../OfferTags";
 import FavButton from "../FavButton";

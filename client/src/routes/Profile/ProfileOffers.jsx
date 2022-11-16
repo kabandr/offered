@@ -1,3 +1,4 @@
+import React from "react";
 import { useParams } from "react-router-dom";
 import OffersPagination from "../../components/OffersPagination";
 import OffersPreview from "../../components/OffersPreview";
@@ -31,7 +32,7 @@ function ProfileOffers() {
       />
     </>
   ) : (
-    <div className="article-preview">{username} doesn't have Offers.</div>
+    <div className="article-preview">{username} doesn&apos;t have Offers.</div>
   );
 }
 

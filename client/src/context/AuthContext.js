@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import PropTypes from 'prop-types';
 import getUser from "../services/getUser";
 
 const AuthContext = createContext();

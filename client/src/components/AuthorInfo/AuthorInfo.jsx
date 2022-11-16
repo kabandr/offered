@@ -5,11 +5,10 @@ import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import getProfile from "../../services/getProfile";
 import Avatar from "../Avatar";
-import OfferDecision from "../OfferDecision";
 
 function AuthorInfo() {
   const { state } = useLocation();
-  const [{ bio, decision, image }, setAuthor] = useState(
+  const [{ bio, image }, setAuthor] = useState(
     state || {},
   );
   const { headers, loggedUser } = useAuth();
@@ -27,9 +26,9 @@ function AuthorInfo() {
       });
   }, [username, headers, state, navigate]);
 
-  const decisionHandler = ({ decision }) => {
-    setAuthor((prev) => ({ ...prev, decision }));
-  };
+  // const decisionHandler = ({ decision }) => {
+  //   setAuthor((prev) => ({ ...prev, decision }));
+  // };
 
   return (
     <div className="col-xs-12 col-md-10 offset-md-1">
@@ -46,11 +45,12 @@ function AuthorInfo() {
           <i className="ion-gear-a"></i> Edit Profile Settings
         </Link>
       ) : (
-        <OfferDecision
-          decision={decision}
-          handler={decisionHandler}
-          username={username}
-        />
+        ""
+        //<OfferDecision
+         // decision={decision}
+         // handler={decisionHandler}
+         // username={username}
+        //>
       )}
     </div>
   );

@@ -8,7 +8,6 @@ async function acceptOffer({ slug, headers}) {
       method: "PUT",
       url: `api/offers/${slug}/accept/`,
     });
-
     return data;
   } catch (error) {
     errorHandler(error);

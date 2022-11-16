@@ -1,3 +1,4 @@
+import React from "react";
 import { useFeedContext } from "../../context/FeedContext";
 
 function TagButton({ tagsList }) {

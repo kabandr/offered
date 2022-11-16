@@ -9,7 +9,7 @@ router.get("/:username", verifyToken, getProfile);
 // Accept Offer
 router.post("/:username", verifyToken, decisionToggler);
 
-// Reject Offer
+// Decline Offer
 router.delete("/:username", verifyToken, decisionToggler);
 
 module.exports = router;

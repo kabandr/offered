@@ -1,12 +1,12 @@
 import axios from "axios";
 import errorHandler from "../helpers/errorHandler";
 
-async function rejectOffer({ slug, headers }) {
+async function declineOffer({ slug, headers }) {
   try {
     const { data } = await axios({
       headers,
-      method: "POST",
-      url: `api/offers/${slug}/reject/`,
+      method: "PUT",
+      url: `api/offers/${slug}/decline/`,
     });
     return data;
   } catch (error) {
@@ -14,4 +14,4 @@ async function rejectOffer({ slug, headers }) {
   }
 }
 
-export default rejectOffer;
+export default declineOffer;

@@ -52,7 +52,7 @@ function OfferEditorForm() {
     e.preventDefault();
 
     setOffer({ headers, slug, candidate, role, compensation, equity, benefits, terms, tagList })
-      .then((slug) => navigate(`/`))
+      .then(() => navigate(`/`))
       .catch(setErrorMessage);
   };
 

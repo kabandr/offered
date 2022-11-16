@@ -1,3 +1,4 @@
+import React from "react";
 import ReactPaginate from "react-paginate";
 import { useAuth } from "../../context/AuthContext";
 import getOffers from "../../services/getOffers";
