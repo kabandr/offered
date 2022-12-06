@@ -1,34 +1,29 @@
 # Offered
+
 Offer Management Tool
 
-## Running a Mongo DB instance using Docker
+## Running Application in Docker 
 
-- We need Docker installed on our machine.
-- A docker-compose file is provided in the root project folder with a GUI tool (Adminer) for the DB.
+- You need Docker and Docker Compose installed on your machine.
 
-Of course we could also use a local or cloud instance (Mongo Atlas free version is a good start) instead of Docker.
+    ```
+    git clone https://github.com/kabandr/offered.git
+    cd offered
+    docker compose up -d
+    ```
 
-## Running the Server
+## Github Actions CI/CD
 
-From project root folder:
+`.github/workflows/build-push-deploy.yaml` contains a workflow which deploys to a staging environment on pushes to the `master` branch and to a production environment on pushes of tags of the form `v#.#.#`.
 
-```
-cd server 
-cp .env.example .env
-npm install
-npm run dev (development mode)
-npm start (production mode)
-```
+## Terraform
 
-Our server runs on port 5000
+The terraform configuration provisions:
+- GCP Compute Engine Virtual Machine
+- PostgreSQL Cluster
+- Cloudflare DNS "A" Record
 
-## Running the Client
-
-From project root folder:
-
-```
-cd client
-npm install
-npm start
-```
-Our client app runs on port 3000
+Using the terraform config requires:
+1) Creating a GCP project (+ service account key for Terraform to use)
+2) Creating a PostreSQL database (+ API key for Terraform to use)
+3) Creating a Cloudflare account (+ API token for Terraform to use)
