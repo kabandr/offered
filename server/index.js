@@ -18,14 +18,14 @@ app.use(express.json());
 (async () => {
   try {
     await sequelize.sync({ alter: true });
-    // await sequelize.authenticate();
+    await sequelize.authenticate();
   } catch (error) {
     console.error(error);
   }
 })();
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("../frontend/build"));
+  app.use(express.static("../client/build"));
 } else {
   app.get("/", (req, res) => res.json({ status: "API is running on /api" }));
 }
