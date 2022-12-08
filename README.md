@@ -1,6 +1,6 @@
 # Offered
 
-Offer Management Tool
+Job Offers Management Application
 
 ## Running Application in Docker 
 
