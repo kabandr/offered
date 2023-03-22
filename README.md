@@ -2,7 +2,7 @@
 
 ## What is this about?
 
-Offered is Job Offers Management Application that aims to streamline the process of offer making on the side of the recruiter and for the candidates to accept or decline offers with a single click. The app features an offer contract in form of a web page with a chat feature to enable both the employer and candidate to continue their negotiations in the chat if they so wish or simply for the candidate to accept the offer by clicking on "accept" or "decline" buttons at the bottom of the contract. Once the candidate has made a decision, the recruiter is notified and the status of the candidate's application is updated.
+Offered is a Job Offers Management Application that aims to streamline the process of offer making on the side of the recruiter and for the candidates to accept or decline offers with a single click. The app features an offer contract in form of a web page with a chat feature to enable both the employer and candidate to continue their negotiations in the chat if they so wish or simply for the candidate to accept the offer by clicking on "accept" or "decline" buttons at the bottom of the contract. Once the candidate has made a decision, the recruiter is notified and the status of the candidate's application is updated.
 
 Warning: This application is still in active development.
 
